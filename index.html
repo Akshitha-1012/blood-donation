@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Donation | Donate Blood, Save Lives</title>
+    <meta name="description" content="Join the mission: Donate blood and save lives. Register as a donor or recipient, find blood drives, and learn more." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-2oP6Yv1nqQj8Wq1o0o4b3f8k1fX7rXj6m1nD1xLk9BqY4zv1rJrC6UQq4qH9D0o1v5yq3CqkOIbjzq1Wgk3+6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <!-- Skip to content for accessibility -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+      <div class="container nav-container">
+        <a class="brand" href="#home" aria-label="Blood Donation Home">
+          <i class="fa-solid fa-droplet brand-icon" aria-hidden="true"></i>
+          <span>Blood<span class="brand-accent">Life</span></span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary Navigation">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#donor">Donor Registration</a></li>
+            <li><a href="#recipient">Recipient Registration</a></li>
+            <li><a href="#locator">Blood Drive Locator</a></li>
+            <li><a href="#awareness">Awareness/Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero Section -->
+      <section id="home" class="section hero">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <h1>Donate Blood, <span class="highlight">Save Lives.</span></h1>
+            <p>
+              Your donation can make the difference between life and death. Join a community of everyday heroes.
+            </p>
+            <div class="hero-actions">
+              <a href="#donor" class="btn btn-primary">Become a Donor</a>
+              <a href="#locator" class="btn btn-outline">Find a Blood Drive</a>
+            </div>
+            <!-- Placeholder: notifications integration (toasts) -->
+            <div id="notification-area" aria-live="polite" aria-atomic="true"></div>
+          </div>
+          <div class="hero-media" aria-hidden="true">
+            <div class="hero-illustration">
+              <i class="fa-solid fa-hand-holding-droplet"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Donor Registration -->
+      <section id="donor" class="section section-alt">
+        <div class="container">
+          <header class="section-header">
+            <h2>Donor Registration</h2>
+            <p>Fill out the form to register as a blood donor.</p>
+          </header>
+
+          <form id="donor-form" class="card form-grid" novalidate>
+            <div class="form-field">
+              <label for="donor-name">Full Name</label>
+              <input id="donor-name" name="name" type="text" placeholder="John Doe" required />
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form-field">
+              <label for="donor-address">Address</label>
+              <input id="donor-address" name="address" type="text" placeholder="123 Main St, City" required />
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form-field">
+              <label for="donor-contact">Contact Number</label>
+              <input id="donor-contact" name="contact" type="tel" placeholder="+91 98765 43210" required />
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form-field">
+              <label for="donor-blood-type">Blood Type</label>
+              <select id="donor-blood-type" name="bloodType" required>
+                <option value="">Select</option>
+                <option>O+</option>
+                <option>O-</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+              </select>
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form-field form-field--full">
+              <label for="donor-history">Medical History</label>
+              <textarea id="donor-history" name="history" rows="3" placeholder="Briefly mention relevant medical details"></textarea>
+            </div>
+            <div class="form-field form-checkbox">
+              <input id="donor-eligible" name="eligible" type="checkbox" required />
+              <label for="donor-eligible">I confirm I meet the eligibility criteria</label>
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Register as Donor</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Recipient Registration -->
+      <section id="recipient" class="section">
+        <div class="container">
+          <header class="section-header">
+            <h2>Recipient Registration</h2>
+            <p>Request blood by providing patient and contact details.</p>
+          </header>
+
+          <form id="recipient-form" class="card form-grid" novalidate>
+            <div class="form-field">
+              <label for="patient-name">Patient Name</label>
+              <input id="patient-name" name="patientName" type="text" placeholder="Jane Doe" required />
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form-field">
+              <label for="recipient-blood-type">Required Blood Type</label>
+              <select id="recipient-blood-type" name="bloodType" required>
+                <option value="">Select</option>
+                <option>O+</option>
+                <option>O-</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+              </select>
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form-field form-field--full">
+              <label for="patient-condition">Condition</label>
+              <textarea id="patient-condition" name="condition" rows="3" placeholder="Reason and urgency for blood request" required></textarea>
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form-field">
+              <label for="recipient-contact">Contact Number</label>
+              <input id="recipient-contact" name="contact" type="tel" placeholder="+91 98765 43210" required />
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Request Blood</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Blood Drive Locator -->
+      <section id="locator" class="section section-alt">
+        <div class="container">
+          <header class="section-header">
+            <h2>Blood Drive Locator</h2>
+            <p>Search for nearby blood drives by city or pin code.</p>
+          </header>
+
+          <div class="locator card">
+            <form id="locator-form" class="locator-form" role="search">
+              <input id="search-location" name="query" type="search" placeholder="Enter city or pin code" aria-label="Search by city or pin code" />
+              <button class="btn btn-outline" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></button>
+            </form>
+
+            <div class="map-wrapper" role="region" aria-label="Map showing nearby blood drives">
+              <!-- Use Google Maps iframe or replace with a static image if offline -->
+              <iframe title="Google Maps placeholder" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15554.144505970375!2d77.5946!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awareness & Education -->
+      <section id="awareness" class="section">
+        <div class="container">
+          <header class="section-header">
+            <h2>Awareness & Education</h2>
+            <p>Learn about the benefits of blood donation and how you can help.</p>
+          </header>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3>Why Donate?</h3>
+              <p>Every 2 seconds, someone needs blood. A single donation can save up to three lives.</p>
+              <a class="link" href="#" aria-disabled="true">Read article</a>
+            </article>
+            <article class="card">
+              <h3>Eligibility Guide</h3>
+              <p>Most healthy individuals aged 18-65 can donate. Check your eligibility before registering.</p>
+              <a class="link" href="#" aria-disabled="true">View guide</a>
+            </article>
+            <article class="card">
+              <h3>Before & After Donation</h3>
+              <p>Stay hydrated, eat iron-rich foods, and rest post-donation for a great experience.</p>
+              <a class="link" href="#" aria-disabled="true">Learn more</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Success Stories -->
+      <section id="stories" class="section section-alt">
+        <div class="container">
+          <header class="section-header">
+            <h2>Success Stories</h2>
+            <p>Real people. Real impact.</p>
+          </header>
+
+          <div class="grid-3">
+            <article class="card story">
+              <p class="story-quote">“A timely donation helped my father recover after surgery.”</p>
+              <div class="story-meta">
+                <span class="avatar" aria-hidden="true">BK</span>
+                <div>
+                  <strong>Bhuvan Kumar</strong>
+                  <small>Recipient family</small>
+                </div>
+              </div>
+            </article>
+            <article class="card story">
+              <p class="story-quote">“Donating every 3 months is my way to give back.”</p>
+              <div class="story-meta">
+                <span class="avatar" aria-hidden="true">AS</span>
+                <div>
+                  <strong>Anita Sharma</strong>
+                  <small>Regular donor</small>
+                </div>
+              </div>
+            </article>
+            <article class="card story">
+              <p class="story-quote">“Our campus drive crossed 500 units this year.”</p>
+              <div class="story-meta">
+                <span class="avatar" aria-hidden="true">MT</span>
+                <div>
+                  <strong>Manish T.</strong>
+                  <small>Student coordinator</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Placeholder: Inventory tracking and admin panel integration sections -->
+      <section id="placeholders" class="section">
+        <div class="container">
+          <header class="section-header">
+            <h2>Coming Soon</h2>
+            <p>Inventory tracking, admin panel, and notifications will be integrated here.</p>
+          </header>
+          <div class="grid-2">
+            <div class="card">
+              <h3>Inventory Tracking</h3>
+              <p>Track blood units by type and location with alerts for low stock.</p>
+            </div>
+            <div class="card">
+              <h3>Admin Panel</h3>
+              <p>Manage donors, recipients, drives, and approvals with analytics.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="#home">
+            <i class="fa-solid fa-droplet brand-icon" aria-hidden="true"></i>
+            <span>Blood<span class="brand-accent">Life</span></span>
+          </a>
+          <p class="footer-desc">Together, we can ensure timely access to safe blood for all.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-list">
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:help@bloodlife.org">help@bloodlife.org</a></li>
+            <li><i class="fa-solid fa-location-dot"></i><span>Hyderabad, India</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul class="footer-list">
+            <li><a href="#faq" aria-disabled="true">FAQ</a></li>
+            <li><a href="#awareness">Awareness</a></li>
+            <li><a href="#locator">Find Drives</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <div class="social">
+            <a href="#" aria-label="Follow on Facebook" aria-disabled="true"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Follow on Twitter" aria-disabled="true"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Follow on Instagram" aria-disabled="true"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Follow on LinkedIn" aria-disabled="true"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <small>© <span id="year"></span> BloodLife. All rights reserved.</small>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+  </html>
+
+
